@@ -9,14 +9,6 @@ export default function Navigation() {
         {
             title: "3D Card",
             src: "#perspective-card"
-        },
-        {
-            title: "3D Card",
-            src: "#perspective-card"
-        },
-        {
-            title: "3D Card",
-            src: "#perspective-card"
         }
     ]
 

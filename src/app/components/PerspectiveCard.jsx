@@ -1,19 +1,12 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react';
-import { trailingSlash } from '../../../next.config';
 
 export default function PerspectiveCard() {
     const cardRef = useRef()
     
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
     const [hover, setHover] = useState(false)
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setRotation(prev => ({ x: 0.1 + prev.x, y: 0.1 + prev.y }))
-    //     }, 1);
-    // }, [rotation])
 
     useEffect(() => {
         window.addEventListener("mousemove", e => {
@@ -47,7 +40,7 @@ export default function PerspectiveCard() {
                     transform: `rotateX(${mousePos.y * -45}deg) rotateY(${mousePos.x * 90}deg) translateZ(50px)`,
                 } : {}}
             >
-                <div className={`${hover ? "p-5" : "p-1"} flex flex-col gap-5 w-full h-full bg-black rounded-2xl shadow-md transition-all ease-out duration-500 ${hover ? "opacity-10" : "opacity-0"}`}>
+                <div className={`${hover ? "p-5 bg-neutral-200" : "p-1 bg-white"} flex flex-col gap-5 w-full h-full rounded-2xl transition-all ease-out duration-500`}>
                     <div className='w-full h-full bg-white rounded-2xl'></div>
                     <div className='w-full h-full bg-white rounded-2xl'></div>
                     <div className='w-full h-full bg-white rounded-2xl'></div>
