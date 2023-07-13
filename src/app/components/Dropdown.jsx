@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useAnimate, stagger, motion } from "framer-motion";
-import Image from 'next/image';
 
 import Arrow from "@/app/assets/arrow.svg"
 
@@ -56,15 +55,7 @@ export default function Dropdown() {
                     className="flex flex-row justify-between items-center w-96 px-8 py-5 bg-white rounded-md shadow-md"
                 >
                     <p className="font-semibold">Dropdown</p>
-                    {/* <Image
-                        src={Arrow}
-                        width={20}
-                        height={20}
-                        className="arrow"
-                    /> */}
-                    <Arrow 
-                        className="arrow w-5 h-5"
-                    />
+                    <Arrow className="arrow w-5 h-5"/>
                 </motion.button>
                 <ul className="flex flex-col gap-2 mt-2">
                     <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 1 </li>

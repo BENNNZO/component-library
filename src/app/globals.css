@@ -39,3 +39,7 @@ html {
     border-radius: 100%;
     fill: white;
 }
+
+.custom_cursor {
+    /* backdrop-filter: invert(0.25); */
+}
