@@ -8,12 +8,12 @@ import Dropdown from './components/Dropdown';
 
 export default function Home() {
     return (
-        <main>
+        <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth'>
             <Navigation />
 
             <InputPhone />
             <PerspectiveCard />
             <Dropdown />
-        </main>
+        </div>
     )
 }

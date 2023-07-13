@@ -18,12 +18,12 @@ export default function Navigation() {
 
 
     return (
-        <section className='fixed top-1/2 left-5 -translate-y-1/2 flex flex-col gap-1 z-10'>
+        <section className='fixed top-1/2 left-12 -translate-y-1/2 flex flex-col gap-1 z-10'>
             {links.map(e => (
                 <a 
                     key={e}
                     href={`${e.src}`} 
-                    className='text-white font-bold hover:translate-x-2 transition-all text-xl'
+                    className='text-white/50 font-bold hover:translate-x-2 transition-all text-xl hover:text-white'
                 >
                     {e.title}
                 </a>

@@ -38,7 +38,7 @@ export default function InputPhone() {
     }
 
     return (
-        <section id='input-phone' className='bg-gradient-to-br from-sky-400 to-purple-400 h-screen grid place-items-center'>
+        <section id='input-phone' className='bg-gradient-to-br from-sky-400 to-purple-400 h-screen grid place-items-center snap-center'>
             <p className={`absolute px-8 py-4 bg-red-200 text-red-500 shadow-md rounded-md transition-all ${errorState ? "opacity-100 -translate-y-20" : "opacity-0 -translate-y-16"}`}>{errorMessage}</p>
             <input 
                 type="tel" 

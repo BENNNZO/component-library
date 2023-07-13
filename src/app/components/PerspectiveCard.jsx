@@ -29,7 +29,7 @@ export default function PerspectiveCard() {
     return (
         <section 
             id='perspective-card' 
-            className='h-screen bg-gradient-to-br from-amber-400 to-pink-400 grid place-items-center' 
+            className='h-screen bg-gradient-to-br from-amber-400 to-pink-400 grid place-items-center snap-center' 
             style={{ perspective: "200px" }}
         >
             <div
