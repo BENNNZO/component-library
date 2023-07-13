@@ -53,14 +53,17 @@ export default function Dropdown() {
                 <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex flex-row justify-between w-96 px-8 py-5 bg-white rounded-md shadow-md"
+                    className="flex flex-row justify-between items-center w-96 px-8 py-5 bg-white rounded-md shadow-md"
                 >
                     <p className="font-semibold">Dropdown</p>
-                    <Image
+                    {/* <Image
                         src={Arrow}
                         width={20}
                         height={20}
                         className="arrow"
+                    /> */}
+                    <Arrow 
+                        className="arrow w-5 h-5"
                     />
                 </motion.button>
                 <ul className="flex flex-col gap-2 mt-2">

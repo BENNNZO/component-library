@@ -12,10 +12,10 @@ export default function Home() {
         <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth'>
             <Navigation />
 
-            <TheButton />
             <InputPhone />
             <PerspectiveCard />
             <Dropdown />
+            <TheButton />
         </div>
     )
 }

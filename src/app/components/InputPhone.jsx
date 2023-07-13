@@ -43,7 +43,7 @@ export default function InputPhone() {
             <input 
                 type="tel" 
                 placeholder='(###) - ### - ####' 
-                className='px-8 py-5 rounded-md shadow-md text-2xl focus:outline-none'
+                className='px-8 py-5 rounded-md shadow-md text-2xl focus:outline-none font-mono w-[19rem]'
                 value={inputValue}
                 onChange={e => updateValue(e.target.value)}
             />
