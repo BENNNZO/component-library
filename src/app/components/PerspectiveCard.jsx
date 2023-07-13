@@ -34,7 +34,7 @@ export default function PerspectiveCard() {
         >
             <div
                 ref={cardRef} 
-                className={`w-72 h-96 ${hover ? "p-5" : "p-1"} rounded-2xl shadow-md bg-white transition-all ease-out duration-500`}
+                className={`z-10 w-72 h-96 ${hover ? "p-5" : "p-1"} rounded-2xl shadow-md bg-white transition-all ease-out duration-500`}
                 style={hover ? {
                     transformStyle: "preserve-3d",
                     transform: `rotateX(${mousePos.y * -45}deg) rotateY(${mousePos.x * 90}deg) translateZ(50px)`,
@@ -45,6 +45,15 @@ export default function PerspectiveCard() {
                     <div className='w-full h-full bg-white rounded-2xl'></div>
                     <div className='w-full h-full bg-white rounded-2xl'></div>
                 </div>
+            </div>
+            <div
+                ref={cardRef} 
+                className={`-z-10 absolute w-72 h-5 top-3/4 ${hover ? "p-5" : "p-1"} rounded-2xl shadow-md bg-black/20 blur-xl transition-all ease-out duration-500`}
+                style={hover ? {
+                    transformStyle: "preserve-3d",
+                    transform: `rotateX(${mousePos.y * -45}deg) rotateY(${mousePos.x * 90}deg) translateZ(50px)`,
+                } : {}}
+            >
             </div>
         </section>
     )

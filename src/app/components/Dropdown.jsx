@@ -48,7 +48,7 @@ export default function Dropdown() {
     const scope = useMenuAnimation(isOpen);
 
     return (
-        <section className="h-screen snap-center bg-gradient-to-br from-violet-400 to-sky-400 grid place-items-center">
+        <section id="dropdown" className="h-screen snap-center bg-gradient-to-br from-violet-400 to-sky-400 grid place-items-center">
             <nav className="menu" ref={scope}>
                 <motion.button
                     whileTap={{ scale: 0.97 }}
@@ -64,11 +64,11 @@ export default function Dropdown() {
                     />
                 </motion.button>
                 <ul className="flex flex-col gap-2 mt-2">
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold">Item 1 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold">Item 2 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold">Item 3 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold">Item 4 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold">Item 5 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 1 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 2 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 3 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 4 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 5 </li>
                 </ul>
             </nav>
         </section>
