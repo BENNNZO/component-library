@@ -14,6 +14,10 @@ export default function Navigation() {
             title: "Dropdown",
             src: "#dropdown"
         },
+        {
+            title: "The Button",
+            src: "#the-button"
+        },
     ]
 
 

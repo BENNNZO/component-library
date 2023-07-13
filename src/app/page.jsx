@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import InputPhone from "@/app/components/InputPhone"
 import PerspectiveCard from './components/PerspectiveCard';
 import Dropdown from './components/Dropdown';
+import TheButton from './components/TheButton';
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <InputPhone />
             <PerspectiveCard />
             <Dropdown />
+            <TheButton />
         </div>
     )
 }

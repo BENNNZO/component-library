@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------ SCROLL STUFF ------------------------------ */
+
 html {
     scroll-behavior: smooth;
-}
-
-.card:hover {
-    background-color: black;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -30,4 +28,14 @@ html {
     background-color: #bababa;
     border-radius: 10px;
     border: 3px solid #ffffff;
+}
+
+
+
+/* ------------------------------- OTHER STUFF ------------------------------ */
+
+
+
+.the-button .button-button:hover {
+    transform: translateY(14px);
 }
