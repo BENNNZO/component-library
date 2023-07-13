@@ -34,8 +34,8 @@ html {
 
 /* ------------------------------- OTHER STUFF ------------------------------ */
 
-
-
-.the-button .button-button:hover {
-    transform: translateY(14px);
+.button-bottom {
+    /* outline: 1px solid white; */
+    border-radius: 100%;
+    fill: white;
 }
