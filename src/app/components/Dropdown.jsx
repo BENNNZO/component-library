@@ -42,27 +42,32 @@ function useMenuAnimation(isOpen) {
     return scope;
 }
 
-export default function Dropdown() {
+export default function Dropdown(props) {
     const [isOpen, setIsOpen] = useState(true);
     const scope = useMenuAnimation(isOpen);
 
     return (
         <section id="dropdown" className="h-screen snap-center bg-gradient-to-br from-violet-400 to-sky-400 grid place-items-center">
-            <nav className="menu" ref={scope}>
+            <nav 
+                className="menu cursor-none" 
+                ref={scope}
+                onMouseEnter={() => props.setHover(true)}
+                onMouseLeave={() => props.setHover(false)}
+            >
                 <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex flex-row justify-between items-center w-96 px-8 py-5 bg-white rounded-md shadow-md"
+                    className="cursor-none flex flex-row justify-between items-center w-96 px-8 py-5 bg-white rounded-md shadow-md"
                 >
                     <p className="font-semibold">Dropdown</p>
                     <Arrow className="arrow w-5 h-5"/>
                 </motion.button>
                 <ul className="flex flex-col gap-2 mt-2">
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 1 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 2 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 3 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 4 </li>
-                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 cursor-pointer select-none">Item 5 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 select-none">Item 1 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 select-none">Item 2 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 select-none">Item 3 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 select-none">Item 4 </li>
+                    <li className="shadow-md px-6 py-3 bg-white rounded-md font-semibold hover:bg-neutral-100 select-none">Item 5 </li>
                 </ul>
             </nav>
         </section>

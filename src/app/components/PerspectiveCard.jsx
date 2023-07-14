@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function PerspectiveCard() {
+export default function PerspectiveCard(props) {
     const cardRef = useRef()
     
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -33,8 +33,10 @@ export default function PerspectiveCard() {
             style={{ perspective: "200px" }}
         >
             <div
-                ref={cardRef} 
-                className={`z-10 w-72 h-96 ${hover ? "p-5" : "p-1"} rounded-2xl shadow-md bg-white transition-all ease-out duration-500`}
+                ref={cardRef}
+                onMouseEnter={() => props.setHover(true)}
+                onMouseLeave={() => props.setHover(false)} 
+                className={`cursor-none z-10 w-72 h-96 ${hover ? "p-5" : "p-1"} rounded-2xl shadow-md bg-white transition-all ease-out duration-500`}
                 style={hover ? {
                     transformStyle: "preserve-3d",
                     transform: `rotateX(${mousePos.y * -45}deg) rotateY(${mousePos.x * 90}deg) translateZ(50px)`,

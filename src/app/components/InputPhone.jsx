@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function InputPhone() {
+export default function InputPhone(props) {
     const [inputValue, setInputValue] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const [errorState, setErrorState] = useState(false)
@@ -40,10 +40,12 @@ export default function InputPhone() {
     return (
         <section id='input-phone' className='bg-gradient-to-br from-sky-400 to-purple-400 h-screen grid place-items-center snap-center'>
             <p className={`absolute px-8 py-4 bg-red-200 text-red-500 shadow-md rounded-md transition-all ${errorState ? "opacity-100 -translate-y-20" : "opacity-0 -translate-y-16"}`}>{errorMessage}</p>
-            <input 
+            <input
+                onMouseEnter={() => props.setHover(true)}
+                onMouseLeave={() => props.setHover(false)}
                 type="tel" 
                 placeholder='(###) - ### - ####' 
-                className='px-8 py-5 rounded-md shadow-md text-2xl focus:outline-none font-mono w-[19rem]'
+                className='cursor-none px-8 py-5 rounded-md shadow-md text-2xl focus:outline-none font-mono w-[19rem]'
                 value={inputValue}
                 onChange={e => updateValue(e.target.value)}
             />

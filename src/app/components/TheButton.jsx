@@ -3,9 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import Button from "@/app/assets/button_01.svg"
-
-export default function TheButton() {
+export default function TheButton(props) {
     return (
         <section id='the-button' className='h-screen snap-center bg-gradient-to-br from-orange-400 to-red-400 grid place-items-center'>
             {/* <motion.div whileTap={{ y: 50 }} className='w-96 h-24 relative drop-shadow-md'>
@@ -48,11 +46,21 @@ export default function TheButton() {
                 </g>
             </svg> */}
             
-            <svg className='drop-shadow-md' width="100%" height="100%" viewBox="0 0 100 100" style={{ fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: "50" }}>
+            <svg
+                className='drop-shadow-md cursor-none'
+                width="100%"
+                height="100%"
+                viewBox="0 0 100 100"
+                style={{ fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: "50" }}
+            >
                 <g transform="matrix(1,0,0,1,0,-6.54167)">
                     <path className='button-bottom' style={{ fill: "url(#_Radial1)" }} d="M50,53.917C40.292,53.917 31.691,55.997 26.354,59.116C22.171,61.561 19.917,64.739 19.917,68C19.917,71.261 22.171,74.439 26.354,76.884C31.691,80.003 40.292,82.083 50,82.083C59.708,82.083 68.309,80.003 73.646,76.884C77.829,74.439 80.083,71.261 80.083,68C80.083,64.739 77.829,61.561 73.646,59.116C68.309,55.997 59.708,53.917 50,53.917ZM50,58.083C58.836,58.083 66.686,59.874 71.543,62.713C74.159,64.243 75.917,65.96 75.917,68C75.917,70.04 74.159,71.757 71.543,73.287C66.686,76.126 58.836,77.917 50,77.917C41.164,77.917 33.314,76.126 28.457,73.287C25.841,71.757 24.083,70.04 24.083,68C24.083,65.96 25.841,64.243 28.457,62.713C33.314,59.874 41.164,58.083 50,58.083Z"/>
                 </g>
-                <g transform="matrix(1,0,0,1,0,-2.54167)">
+                <g 
+                    transform="matrix(1,0,0,1,0,-2.54167)"
+                    onMouseEnter={() => props.setHover(true)}
+                    onMouseLeave={() => props.setHover(false)}
+                >
                     <path className='fill-transparent' d="M22,39L22.001,38.922C22.098,32.335 34.607,27 50,27C65.454,27 78,32.377 78,39L78,64C78,70.623 65.454,76 50,76C34.546,76 22,70.623 22,64L22,39Z"/>
                     <clipPath id="_clip1">
                         <path d="M22,39L22.001,38.922C22.098,32.335 34.607,27 50,27C65.454,27 78,32.377 78,39L78,64C78,70.623 65.454,76 50,76C34.546,76 22,70.623 22,64L22,39Z"/>
