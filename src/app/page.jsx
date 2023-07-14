@@ -15,7 +15,6 @@ export default function Home() {
 
     return (
         <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth'>
-            <p className='absolute top-0 left-0 bg-red-400 text-yellow-400 z-30'>{JSON.stringify(hover)}</p>
             <Cursor hover={hover} />
             <Navigation setHover={setHover} />
 
