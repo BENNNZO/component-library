@@ -3,6 +3,10 @@ import React from 'react';
 export default function Navigation(props) {
     const links = [
         {
+            title: "Split Hover",
+            src: "#split-hover"
+        },
+        {
             title: "Phone Input",
             src: "#input-phone"
         },
