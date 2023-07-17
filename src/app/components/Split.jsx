@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function Dot() {
     const [split, setSplit] = useState(false)
@@ -17,8 +18,11 @@ function Dot() {
     }
 
     return (
-        <div 
+        <motion.div
+            initial={{ scale: 0.5, opacity: 1 }}
+            animate={{ scale: 1, opacity: 1 }}
             className={`w-full h-full ${split ? "" : "bg-white"} transition-colors ease-out rounded-full relative`}
+            // className={`w-full h-full transition-colors ease-out rounded-full relative`}
             onMouseEnter={() => splitFunction()}
 
         >
@@ -32,7 +36,7 @@ function Dot() {
             ) : (
                 null
             )}
-        </div>
+        </motion.div>
     )
 }
 

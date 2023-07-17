@@ -10,6 +10,7 @@ import PerspectiveCard from './components/PerspectiveCard';
 import Dropdown from './components/Dropdown';
 import TheButton from './components/TheButton';
 import Split from "./components/Split"
+import Clickers from './components/Clickers';
 
 export default function Home() {
     const [hover, setHover] = useState(false)
@@ -19,6 +20,8 @@ export default function Home() {
             <Cursor hover={hover} />
             <Navigation setHover={setHover} />
 
+
+            <Clickers setHover={setHover} />
             <Split setHover={setHover} />
             <InputPhone setHover={setHover} />
             <PerspectiveCard setHover={setHover} />

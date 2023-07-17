@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navigation(props) {
     const links = [
         {
-            title: "Split Hover",
+            title: "The Dot",
             src: "#split-hover"
         },
         {
