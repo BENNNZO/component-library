@@ -17,12 +17,14 @@ export default function Cursor(props) {
 
     return (
         <>
-            <div 
-                className={`z-20 ${props.hover ? "w-44 h-44 opacity-0" : "w-10 h-10 opacity-25"} bg-white rounded-full absolute pointer-events-none transition-all ease-out duration-500`}
+            <div
+                draggable={false} 
+                className={`z-20 ${props.hover ? "w-44 h-44 opacity-0" : "w-10 h-10 opacity-25"} bg-white select-none pointer-events-none rounded-full absolute transition-all ease-out duration-500`}
                 style={{ transform: `translate(calc(${mousePos.x}px - 50%), calc(${mousePos.y}px - 50%))` }}
             />
             <div 
-                className={`z-20 ${props.hover ? "bg-neutral-900/70" : "bg-white"} transition-colors duration-500 rounded-full w-4 h-4 absolute pointer-events-none custom_cursor`} 
+                draggable={false} 
+                className={`z-20 ${props.hover ? "bg-neutral-900/70" : "bg-white"} transition-colors select-none duration-500 rounded-full w-4 h-4 absolute pointer-events-none custom_cursor`} 
                 style={{ transform: `translate(calc(${mousePos.x}px - 50%), calc(${mousePos.y}px - 50%))` }}
             />
         </>

@@ -16,7 +16,7 @@ export default function Home() {
     const [hover, setHover] = useState(false)
 
     return (
-        <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth'>
+        <div className='snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scroll-smooth'>
             <Cursor hover={hover} />
             <Navigation setHover={setHover} />
 

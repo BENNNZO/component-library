@@ -3,6 +3,10 @@ import React from 'react';
 export default function Navigation(props) {
     const links = [
         {
+            title: "Clickers",
+            src: "#clickers"
+        },
+        {
             title: "The Dot",
             src: "#split-hover"
         },
@@ -31,9 +35,9 @@ export default function Navigation(props) {
             onMouseEnter={() => props.setHover(true)}
             onMouseLeave={() => props.setHover(false)}
         >
-            {links.map(e => (
+            {links.map((e, i) => (
                 <a 
-                    key={e}
+                    key={i}
                     href={`${e.src}`} 
                     className='text-white/50 font-bold hover:translate-x-2 transition-all text-xl hover:text-white cursor-none'
                 >
