@@ -1,39 +1,51 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function Clicker(props) {
-    const [pos, setPos] = useState({ x: 0, y: 0 })
-
-    console.log(props.index)
-    console.log(Math.sin(props.index) * 360)
+    const [pos, setPos] = useState({ 
+        x: Math.sin(props.index / props.val1) * props.index / props.val2, 
+        y: Math.cos(props.index / props.val1) * props.index / props.val2,
+    })
 
     useEffect(() => {
-        setPos({
-            x: Math.sin(props.index / props.val1) * props.index / props.val2,
-            y: Math.cos(props.index / props.val1) * props.index / props.val2
+        setPos({ 
+            x: Math.sin(props.index / props.val1) * props.index / props.val2, 
+            y: Math.cos(props.index / props.val1) * props.index / props.val2,
         })
+        
+        // setTimeout(() => {
+        //     setPos({ x: 0, y: 0 })
+        // }, 1000);
     }, [props.val1, props.val2])
 
     return (
-        <div className='w-4 h-4 bg-white rounded-full absolute overflow-hidden animate-pulse transition-transform ease-out duration-500' style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}>
+        <motion.div 
+            className='w-4 h-4 bg-white rounded-full absolute overflow-hidden' 
+            style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+        >
             {/* {props.index} */}
-        </div>
+        </motion.div>
     )
 }
 
 export default function Clickers() {
-    const [amount, setAmount] = useState(1000)
-    const [val1, setVal1] = useState(1)
-    const [val2, setVal2] = useState(1)
+    const [amount, setAmount] = useState(0)
+    const [val1, setVal1] = useState(5)
+    const [val2, setVal2] = useState(0.5)
 
     useEffect(() => {
         let prevAmount = 0
+        let interval = 0
 
         const amountInterval = setInterval(() => {
-            prevAmount++
-            setAmount(prevAmount)
-        }, 100);
+            prevAmount = 0
+            setAmount(Math.round((Math.sin(interval / 100) + 1) * 100))
+            interval++
+        }, 0);
 
         return () => clearInterval(amountInterval)
     }, [])
